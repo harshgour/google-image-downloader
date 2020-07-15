@@ -56,13 +56,13 @@ def save(folder, file, url):
             file = os.path.join(folder, hl.sha1(image).hexdigest()[:10] + '.jpg')
         with open(file, 'wb') as f:
             img.save(f, 'JPEG', quality=100)
-        print('Downloaded ', {url}, ' - {file}')
+        print('Downloaded ', {url}, ' - ', {file})
     except Exception as e:
         print('Unable to get - ', {e})
 
 
 while True:
-    qs = list(input('Enter Topic: ').strip().split(" "))#topic input
+    qs = list(input('Enter Topic: ').strip().split(","))#topic input
     n = int(input('Number of Images: ')) #no_of_images
     for q in qs:
         links = list()
